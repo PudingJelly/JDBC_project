@@ -1,0 +1,10 @@
+package com.java.common;
+
+public enum Condition {
+
+	// 영화명을 검색할 조건으로 사용할 컨디션
+	PUB_YEAR,
+	NATION,
+	MOVIE_NAME,
+	ALL
+}

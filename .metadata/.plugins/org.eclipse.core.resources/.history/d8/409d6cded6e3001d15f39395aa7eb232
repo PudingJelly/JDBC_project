@@ -1,0 +1,20 @@
+package com.java.user.service;
+
+import com.java.common.AppService;
+
+public class UserService implements AppService {
+
+	@Override
+	public void start() {
+		while(true) {
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
+
+}

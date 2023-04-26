@@ -1,0 +1,60 @@
+package com.java.movie.service;
+
+import com.java.common.AppService;
+import com.java.movie.domain.Movie;
+import com.java.movie.repository.MovieRepository;
+
+import static com.java.view.AppUI.*;
+
+import java.time.LocalDateTime;
+
+public class MovieService implements AppService {
+
+	@Override
+	public void start() {
+		while(true) {
+			movieManagementScreen();
+			int selection = inputInteger();
+
+			switch (selection) {
+
+			case 1:
+
+				break;
+			case 2:
+
+				break;
+			case 3:
+				return;
+
+			default:
+				System.out.println("메뉴를 다시 입력하세요.");
+				System.out.println("\n====== 계속 진행하시려면 ENTER를 누르세요 ======");
+				inputString();
+			}
+		}
+
+
+	}
+
+	// 영화 정보 추가 비즈니스 로직
+	private void insertMovieData() {
+		System.out.println("\n======= 영화 DVD 정보를 추가합니다. =======");
+		System.out.print("# 영화명: ");
+		String movieName = inputString();
+
+		System.out.print("# 국가명: ");
+		String nation = inputString();
+
+		System.out.println("# 발매연도: ");
+		int pubYear = inputInteger();
+
+		Movie newMovie = new Movie();
+		newMovie.setMovieName(movieName);
+		newMovie.setNation(nation);
+		
+		newMovie.setPubYear(pubYear);			
+
+		MovieRepository
+	}
+}

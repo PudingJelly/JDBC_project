@@ -1,0 +1,83 @@
+package com.java.order.service;
+
+import com.java.common.AppService;
+import com.java.movie.repository.MovieRepository;
+
+import static com.java.view.AppUI.*;
+
+import java.util.List;
+
+public class OrderService implements AppService {
+
+	private final MovieRepository movieRepository = new MovieRepository();
+	
+	
+	@Override
+	public void start() {
+		orderManagementScreen();
+		int selection = inputInteger();
+		
+		switch (selection) {
+		case 1:
+			
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+
+		default:
+			System.out.println("메뉴를 다시 입력하세요.");
+			
+		}
+		System.out.println("\n====== 계속 진행하시려면 ENTER를 누르세요 ======");
+		inputString();
+	}
+	
+	// DVD 대여 서비스 비즈니스 로직
+	private void processOrderDvd() {
+		while(true) {
+			System.out.println("\n========== 대여 관리 시스템을 실행합니다. ==========");
+			System.out.println("[ 1 .대여 가능 DVD 목록 보기 | 2. 대여중인 영화 반납 예정일 확인 | 3. 이전으로 돌아가기");
+			System.out.print(">>> ");
+			int selection = inputInteger();
+			
+			switch (selection) {
+			case 1:
+				showRentalPossibleList();
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				return;
+
+			default:
+				System.out.println("### 메뉴를 다시 입력하세요");
+			}	
+		}
+	}
+
+	
+	// 대여 가능한 DVD 목록 보기
+	private void showRentalPossibleList() {
+		List<Movie> movieList = movieRepository.searchByRental("true");
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

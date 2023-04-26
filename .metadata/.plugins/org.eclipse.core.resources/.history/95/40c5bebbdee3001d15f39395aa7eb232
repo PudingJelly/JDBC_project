@@ -1,0 +1,21 @@
+package com.java.user.repasitory;
+
+import java.sql.Connection;
+
+import com.java.common.DataBaseConnection;
+import com.java.user.domain.User;
+
+public class UserRepository {
+	
+	//커넥션 받아오기
+	DataBaseConnection connection = DataBaseConnection.getInstance();
+	
+	// ctrl + shift + O 자동 import
+	public void addUser(User user) {
+		System.out.println("repository: " + user);
+				
+		Connection conn = connection.getConnection();
+	}
+	
+
+}
