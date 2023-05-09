@@ -81,7 +81,7 @@ public class MovieRepository {
 	public List<Movie> searchByRental(String rental) {
 		List<Movie> movieList = new ArrayList<>();
 		String sql = "";
-		if(rental.equals(true)) {
+		if(rental.equals("true")) {
 			sql = "SELECT * FROM movie WHERE rental = 'true'";
 		} else {
 			sql = "SELECT * FROM movie WHERE rental = 'false'";	

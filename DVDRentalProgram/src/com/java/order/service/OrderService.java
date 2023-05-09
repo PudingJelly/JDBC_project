@@ -48,7 +48,7 @@ public class OrderService implements AppService {
 	private void processOrderDvd() {
 		while(true) {
 			System.out.println("\n========== 대여 관리 시스템을 실행합니다. ==========");
-			System.out.println("[ 1 .대여 가능 DVD 목록 보기 | 2. 대여중인 영화 반납 예정일 확인 | 3. 이전으로 돌아가기");
+			System.out.println("[ 1 .대여 가능 DVD 목록 보기 | 2. 대여중인 영화 반납 예정일 확인 | 3. 이전으로 돌아가기 ]");
 			System.out.print(">>> ");
 			int selection = inputInteger();
 			
@@ -75,7 +75,7 @@ public class OrderService implements AppService {
 		int count = movieList.size();
 		
 		if(count > 0) {
-			System.out.printf("\n==================== 검색 결과 (총 %d건) ====================", count);
+			System.out.printf("\n==================== 검색 결과 (총 %d건) ====================\n", count);
 			for(Movie m : movieList) {
 				System.out.println(m);
 			}
@@ -111,15 +111,14 @@ public class OrderService implements AppService {
 			}
 			System.out.println("=======================================");
 			System.out.println("\n### 대여할 회원의 번호를 입력하세요.");
-			System.out.println(">>> ");
+			System.out.print(">>> ");
 			int userNumber = inputInteger();
 			
 			if(userNums.contains(userNumber)) {
 				orderRepository.addOrder(movieNumber, userNumber);
 			} else {
 				System.out.println("\n### 검색이 된 회원의 번호를 입력해야 합니다.");
-			}
-			
+			}			
 			
 		} else {
 			System.out.println("\n### 대여자 정보가 없습니다.");

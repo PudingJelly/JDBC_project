@@ -74,7 +74,7 @@ public class Movie {
 	
 	@Override
     public String toString() {
-        String rental = this.rental ? "대여중" : "대여가능";
+        String rental = this.rental ? "대여가능" : "대여중";
         return
                 "## DVD번호: " + serialNumber +
                 ", 영화명: " + movieName +
